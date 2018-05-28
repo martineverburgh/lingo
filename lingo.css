@@ -1,0 +1,46 @@
+html {
+    color: red;
+}
+table {
+    margin-left:auto;
+    margin-right:auto;
+    border-collapse: collapse;
+    text-align: center;
+}
+table, tr, td {
+    border: 1px solid black;
+    margin-top: 100px;
+    margin-bottom: 20px;
+    background-color: PaleTurquoise;
+}
+td {
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    font-size: 1.5em;
+    font-family: Georgia;
+    font-weight: bold;
+}
+input[type=text] {
+    margin: auto;
+    width: 265px;
+    padding: 12px 20px;
+    display: inline;
+    border: 1px solid black;
+    border-radius: 4px;
+    box-sizing: border-box;
+    text-align: center;
+}
+div {
+    text-align: center;
+    margin: auto;
+}
+.rightLocation{
+    background-color: orange;
+    color: white;
+}
+.wrongLocation {
+    background-image: url("images/gelestip.png");
+    background-repeat: no-repeat;
+    background-position: center;
+}
