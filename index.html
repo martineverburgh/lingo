@@ -6,51 +6,55 @@
     <link rel="stylesheet" type="text/css" href="lingo.css">
 </head>
 <body>
-
-<script src="lingo.js"></script>
-<button type="button" onclick="myFunction()">TEST</button>
 <div><img src="lingo.jpg" alt="lingo"/></div>
-<table>
-    <tr>
-        <td id="R1_L1">L</td>
-        <td id="R1_L2">I</td>
-        <td id="R1_L3">N</td>
-        <td id="R1_L4">G</td>
-        <td id="R1_L5">O</td>
-    </tr>
-    <tr>
-        <td class="rightLocation" id="R2_L1">L</td>
-        <td id="R2_L2">I</td>
-        <td id="R2_L3">N</td>
-        <td id="R2_L4">G</td>
-        <td class="wrongLocation" id="R2_L5">O</td>
-    </tr>
-    <tr>
-        <td id="R3_L1">L</td>
-        <td id="R3_L2">I</td>
-        <td id="R3_L3">N</td>
-        <td id="R3_L4">G</td>
-        <td id="R3_L5">O</td>
-    </tr>
-    <tr>
-        <td id="R4_L1">L</td>
-        <td id="R4_L2">I</td>
-        <td id="R4_L3">N</td>
-        <td id="R4_L4">G</td>
-        <td id="R4_L5">O</td>
-    </tr>
-    <tr>
-        <td id="R5_L1">L</td>
-        <td id="R5_L2">I</td>
-        <td id="R5_L3">N</td>
-        <td id="R5_L4">G</td>
-        <td id="R5_L5">O</td>
-    </tr>
-</table>
-<div>
-    <form action="/hier moet nog wat komen">
-        <input type="text" name="invoer" placeholder="Typ hier je 5-letter woord">
-    </form>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+        $( document ).ready(function() {
+    $(':input').keypress(function() {
+    $(this).next(':input').focus();
+    });
+    });
+    </script>
+
+<div id="lingoVeld">
+
+    <div class="lingo">
+        <input class="rightLocation" id="rij1cel1" type="text" name="invoer" placeholder="" maxlength="1">
+        <input id="rij1cel2" type="text" name="invoer" placeholder="" maxlength="1">
+        <input id="rij1cel3" type="text" name="invoer" placeholder="" maxlength="1">
+        <input id="rij1cel4" type="text" name="invoer" placeholder="" maxlength="1">
+        <input class="wrongLocation" id="rij1cel5" type="text" name="invoer" placeholder="" maxlength="1">
+    </div>
+    <div class="lingo">
+        <input id="rij2cel1" type="text" name="invoer" placeholder="" maxlength="1">
+        <input id="rij2cel2" type="text" name="invoer" placeholder="" maxlength="1">
+        <input id="rij2cel3" type="text" name="invoer" placeholder="" maxlength="1">
+        <input id="rij2cel4" type="text" name="invoer" placeholder="" maxlength="1">
+        <input id="rij2cel5" type="text" name="invoer" placeholder="" maxlength="1">
+    </div>
+    <div class="lingo">
+        <input id="rij3cel1" type="text" name="invoer" placeholder="" maxlength="1">
+        <input id="rij3cel2" type="text" name="invoer" placeholder="" maxlength="1">
+        <input id="rij3cel3" type="text" name="invoer" placeholder="" maxlength="1">
+        <input id="rij3cel4" type="text" name="invoer" placeholder="" maxlength="1">
+        <input id="rij3cel5" type="text" name="invoer" placeholder="" maxlength="1">
+    </div>
+    <div class="lingo">
+        <input id="rij4cel1" type="text" name="invoer" placeholder="" maxlength="1">
+        <input id="rij4cel2" type="text" name="invoer" placeholder="" maxlength="1">
+        <input id="rij4cel3" type="text" name="invoer" placeholder="" maxlength="1">
+        <input id="rij4cel4" type="text" name="invoer" placeholder="" maxlength="1">
+        <input id="rij4cel5" type="text" name="invoer" placeholder="" maxlength="1">
+    </div>
+    <div class="lingo">
+        <input id="rij5cel1" type="text" name="invoer" placeholder="" maxlength="1">
+        <input id="rij5cel2" type="text" name="invoer" placeholder="" maxlength="1">
+        <input id="rij5cel3" type="text" name="invoer" placeholder="" maxlength="1">
+        <input id="rij5cel4" type="text" name="invoer" placeholder="" maxlength="1">
+        <input id="rij5cel5" type="text" name="invoer" placeholder="" maxlength="1">
+    </div>
 </div>
+
 </body>
 </html>
