@@ -18,6 +18,7 @@ public class Player implements Serializable {
     private int id;
 
     @NotBlank
+    @Column(unique=true)
     private String playerName;
 
     private int lingoScore;
