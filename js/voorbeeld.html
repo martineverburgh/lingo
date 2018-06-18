@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Workshop: JSON Laden (Local / Remote)</title>
+
+    <style>
+		#content {
+		width: 1200px;
+		margin:auto;
+		font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+		}
+	</style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><!--haal jQuery van Google Hosted Libraries-->
+
+    <script>
+
+
+		<!--Functions -->
+
+
+		function showRecords(jsonrecordset) {
+		var s = "";
+			for(var i=0; i < jsonrecordset.value.length;i++) {
+				s = s + "<ul><h2>Record " + (i + 1) + "</h2>";
+				for (var key in jsonrecordset.value[i]) {
+					if (jsonrecordset.value[i].hasOwnProperty(key)) {
+						s = s+ "<li>" + key + ": " + jsonrecordset.value[i][key] + "</li>";
+					}
+				}
+				s= s + "</ul>";
+
+			}
+		document.getElementById("content").innerHTML = s;
+		return false;
+		}
+
+
+		function getData(surl,callback) {
+			$.ajax({
+				url: surl,
+				method: 'GET',
+				dataType: 'json',
+				success: callback,
+				error: function(requestObject, error, errorThrown) {
+					console.log("error thrown, add handler to exit gracefully");
+				},
+				timeout: 3000 //to do: research and develop further in combination with error handling (bcontinue).
+			});
+		};
+
+
+
+
+
+	</script>
+</head>
+
+<body>
+
+<div id="content">(results go here)</div>
+
+
+</body>
+</html>
+<script>
+// A $( document ).ready() block.
+$( document ).ready(function() {
+
+	getData("5-letterwoorden.json", showRecords);
+
+	});
+</script>
