@@ -11,28 +11,28 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping
+@RequestMapping("/players")
 public class PlayerController {
 
     @Autowired
     PlayerRepository playerRepository;
 
-    @GetMapping("/api/players")
+    @GetMapping
     public List<Player> getAllPlayers(){
         return playerRepository.findAll();
     }
 
-    @PostMapping("/api/players")
+    @PostMapping
     public Player createPlayer(@Valid @RequestBody Player player) {
         return playerRepository.save(player);
     }
 
-    @GetMapping("/api/players/{playerName}")
+    @GetMapping("/{playerName}")
     public Player getPlayerbyPlayerName(@PathVariable(value = "playerName") String playerName) {
         return playerRepository.findByPlayerName(playerName);
     }
 
-    @PutMapping("/api/players/{playerName}")
+    @PutMapping("/{playerName}")
     public Player updatePlayer(@PathVariable(value = "playerName") String playerName, @Valid @RequestBody Player playerDetails) {
 
         Player player = playerRepository.findByPlayerName(playerName);
@@ -45,7 +45,7 @@ public class PlayerController {
         return updatedPlayer;
     }
 
-    @DeleteMapping("/api/players/{playerName}")
+    @DeleteMapping("/{playerName}")
     public ResponseEntity<?> deleteNote(@PathVariable(value = "playerName") String playerName) {
         Player player = playerRepository.findByPlayerName(playerName);
 
