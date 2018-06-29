@@ -2,9 +2,8 @@ $( document ).ready(function() {
     showFirstLetter();
 
     $(':input').keypress(function(e) {
-       if (e.which !== 0) {
+      if (e.which !== 0) {
             $(this).next(':input').focus();
-            $(this).next(':input').select();
        }
     });
     for (var i=1; i <= 5; i++)
@@ -32,8 +31,7 @@ function showFirstLetter() {
       var cell = getCell(1,1);
       $(cell).val(letter);
       addRightLocationToCell(cell);
-      $(cell).focus();
-      $(cell).select();
+      $(cell).next(':input').focus();
     });
 }
 
@@ -49,7 +47,6 @@ function validate(currentRowNumber) {
             alert("Dit is geen geldig 5-letterwoord, probeer opnieuw");
             var cell = getCell(currentRowNumber,1);
             $(cell).focus();
-            $(cell).select();
         }
     })
 }
