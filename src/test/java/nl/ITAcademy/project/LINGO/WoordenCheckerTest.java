@@ -40,4 +40,12 @@ public class WoordenCheckerTest {
         String[] expectedOutput5 = {null, "right", "wrong", "right", null};
         assertArrayEquals(expectedOutput5, woordenChecker.checkInput("lawen"));
     }
+
+    @Test
+    public void checkSpecificCase() {
+        WoordenChecker woordenChecker = new WoordenChecker();
+        woordenChecker.setWord("manou");
+        String[] expectedOutput1 = {null, null, "wrong", null, null};
+        assertArrayEquals(expectedOutput1, woordenChecker.checkInput("traag"));
+    }
 }

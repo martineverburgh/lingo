@@ -4,10 +4,7 @@ import nl.ITAcademy.project.LINGO.LINGO;
 import nl.ITAcademy.project.LINGO.WoordenChecker;
 import nl.ITAcademy.project.LINGO.model.Player;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/lingo")
@@ -17,12 +14,18 @@ public class lingoController {
     WoordenChecker lingo = new WoordenChecker();
 
     @GetMapping("/start")
-    public void startLingo(){
+    public String getFirstLetter(){
         lingo.pickRandomWord();
+        return lingo.getWord().substring(0,1);
     }
 
-    @GetMapping
-    public String[] getInputAndReturnLocationInfo(@PathVariable(value = "input") String input) {
+    @GetMapping("/validate")
+    public boolean checkValidInput(@RequestParam("input") String input){
+        return lingo.isValidWord(input);
+    }
+
+    @GetMapping("/checkInput")
+    public String[] getInputAndReturnLocationInfo(@RequestParam("input") String input) {
         return lingo.checkInput(input);
     }
 }

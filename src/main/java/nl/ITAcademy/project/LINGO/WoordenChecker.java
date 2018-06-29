@@ -62,7 +62,13 @@ public class WoordenChecker {
                 if (c == d) {
                     output[i] = "wrong";
                     inputChars[i] = '8';
-                    wordChars[i] = '9';
+                    int j = 0;
+                    for (char e : wordChars) {
+                        if (e == d) {
+                            wordChars[j] = '9';
+                        }
+                        j++;
+                    }
                 }
             }
             i++;
