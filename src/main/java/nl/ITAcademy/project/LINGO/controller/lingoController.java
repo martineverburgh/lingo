@@ -21,7 +21,7 @@ public class lingoController {
 
     @GetMapping("/validate")
     public boolean checkValidInput(@RequestParam("input") String input){
-        return lingo.isValidWord(input);
+        return lingo.isValidWord(input.toLowerCase());
     }
 
     @GetMapping("/checkInput")

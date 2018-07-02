@@ -1,4 +1,5 @@
 $( document ).ready(function() {
+
     showFirstLetter();
 
     $(':input').keypress(function(e) {
@@ -17,6 +18,21 @@ $( document ).ready(function() {
     }
 });
 
+var score = 0;
+
+function checkForWin(result, currentRowNumber){
+    var rightAnswer = new Array("right", "right", "right", "right", "right");
+    if(JSON.stringify(result) === JSON.stringify(rightAnswer)){
+        score += 10;
+        alert("Hoera, je hebt het goed geraden! +10 punten!");
+    }
+    if((currentRowNumber == 5) && (JSON.stringify(result) !== JSON.stringify(rightAnswer))){
+        score += -2;
+        alert("Helaas, je hebt het niet geraden... -2 punten");
+    }
+    var s = document.getElementById("userscore");
+        s.innerText = score;
+}
 
 function getRowInput(rowNumber){
     var rowInput = "";
@@ -45,6 +61,7 @@ function validate(currentRowNumber) {
         else
         {
             alert("Dit is geen geldig 5-letterwoord, probeer opnieuw");
+            $("#rij" + (parseInt(currentRowNumber))).find('input:text').val('');
             var cell = getCell(currentRowNumber,1);
             $(cell).focus();
         }
@@ -65,8 +82,14 @@ function processCheckInput(currentRowNumber)
         if (currentRowNumber < 5) {
             $("#rij" + (parseInt(currentRowNumber) + 1)).children("input:first-child").focus();
         }
+        var timeOut;
+            clearTimeout(timeOut);
+            timeOut = setTimeout(function() {
+                checkForWin(result, currentRowNumber);
+                }, 500);
     })
 }
+
 
 
 function getCell(row, column) {
@@ -79,4 +102,17 @@ function addRightLocationToCell(cell) {
 
 function addWrongLocationToCell(cell) {
     $(cell).addClass("wrongLocation");
+}
+
+function newGame(){
+    for (var i=1; i <= 5; i++)
+        {
+           for (var j=1; j <= 5; j++)
+           {
+                var cell = getCell(i,j);
+                $(cell).removeClass("wrongLocation rightLocation");
+                $(cell).val('');
+           }
+        }
+    showFirstLetter();
 }
