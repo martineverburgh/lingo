@@ -24,11 +24,13 @@ function checkForWin(result, currentRowNumber){
     var rightAnswer = new Array("right", "right", "right", "right", "right");
     if(JSON.stringify(result) === JSON.stringify(rightAnswer)){
         score += 10;
-        alert("Hoera, je hebt het goed geraden! +10 punten!");
+        alert("Hoera, je hebt het goed geraden! \r\n+10 punten!");
     }
     if((currentRowNumber == 5) && (JSON.stringify(result) !== JSON.stringify(rightAnswer))){
         score += -2;
-        alert("Helaas, je hebt het niet geraden... -2 punten");
+        $.get( "/lingo/answer", function( answer ) {
+        alert("Helaas, je hebt het niet geraden...\r\nHet juiste antwoord was " + answer + "\r\n-2 punten");
+        });
     }
     var s = document.getElementById("userscore");
         s.innerText = score;

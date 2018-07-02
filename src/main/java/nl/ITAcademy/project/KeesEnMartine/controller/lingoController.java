@@ -17,6 +17,11 @@ public class lingoController {
         return lingo.getWord().substring(0,1);
     }
 
+    @GetMapping("/answer")
+    public String getCorrectAnswer(){
+        return lingo.getWord();
+    }
+
     @GetMapping("/validate")
     public boolean checkValidInput(@RequestParam("input") String input){
         return lingo.isValidWord(input.toLowerCase());
