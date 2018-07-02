@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Martine/Kees">
+    <meta name="keywords" content="Huiswerk">
+    <meta name="keywords" content="Project">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/opmaak.css">
+    <script>
+
+    </script>
+</head>
+<body>
+<header>
+    <div ALIGN="right">
+        <div class="box">
+            <div class="ubox" id="username">User</div>
+            <div class="ubox" id="userscore">Hiscore</div>
+        </div>
+    </div>
+</header>
+<div>
+    <ul>
+        <li><a class="active" href="index.html">Home</a></li>
+        <li><script>sendData("paginas/lingo.html", "Lingo")</script></li>
+        <li><script>sendData("paginas/memory.html", "Memory")</script></li>
+        <li><script>sendData("paginas/info.html", "Over ons")</script></li>
+        <li><script>sendData("paginas/edituser.html", "Wijzig gegevens")</script></li>
+    </ul>
+</div>
+<div class="tbl">
+    <div class="row">
+        <div class="col">
+            <h3>Project info</h3>
+        </div>
+        <div class="col">
+            <h3>Inlog</h3>
+            <div>Gebruikersnaam: <input id="inputfield" type="text" name="username"></div>
+            <button class="button">OK</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="tbl">
+                <div class="row">
+                    <div class="col">
+                        <h3>Info Lingo</h3>
+                        <div class="explic">Lingo is een spel waarbij de speler een woord van 5 letters invoert.
+                            De computer controleert vervolgens welke letters van het opgegeven woord overeenkomeen met de letteer van het te raden woord.
+                            Met rood worden de letters die op de juiste plaats staan, met geel worden juiste letters aangegeven die niet op de goede plaats staan.<br />
+                            De speler krijgt 5 pogingen om het juiste woord te raden.</div>
+                    </div>
+                    <div class="col">
+                        <h3>Info Memory</h3>
+                        <div class="explic">Bij Memory is het de bedoeling om steeds twee dezelfde plaatjes te vinden door op twee geloten vakjes te klikken.
+                            Wanneer de speler twee dezelfde vakjes aanklikt, blijven deze open staan.<br />
+                        Het is de bedoeling om in zo weinig mogelijk pogingen alle vakjes om te draaien.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <h3>High scores</h3>
+        </div>
+    </divclass>
+</div>
+    <script src="../js/index.js"></script>
+</div>
+</body>
+</html>

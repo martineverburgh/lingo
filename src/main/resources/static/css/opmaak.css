@@ -1,0 +1,127 @@
+body {
+    //height: 960px;
+    //background-color: #EFE6FA;
+    background: linear-gradient(to right, #9F96AA, #EFE6FA);
+    //background: url(../images/spelletjes2.png) center top no-repeat;
+    background-size: 100%;
+
+}
+ul {
+    position: sticky;
+    top: 0;
+    list-style-type: none;
+    margin: 0;
+    overflow: hidden;
+    background-color: Blue;
+    position: sticky;
+    top: 0;
+}
+li {
+    float: left;
+}
+li a:hover:not(.active) {
+    background-color: LightGrey;
+}
+.active {
+    background-color: Green;
+}
+li a {
+
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 5px 50px;
+
+    font-family: Calibri, Arial;
+    text-decoration: none;
+
+}
+header {
+    width: full;
+}
+
+.title{
+    width: 50%;
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+}
+.general{
+    margin: auto;
+    float: left;
+    border-width: 2px;
+    border-color: DarkGray;
+    border-style: solid;
+    text-align: center;
+}
+
+.box {
+    width: 10em;
+    height: 2em;
+    border-width: 2px;
+    border-color: DarkGray;
+    border-style: solid;
+    text-align: center;
+}
+
+.ubox {
+    box-sizing: box-content;
+    padding: 3px;
+    float: left;
+}
+
+.tbl {
+    /*
+    border-width: 2px;
+    border-color: DarkGray;
+    border-style: solid;
+    */
+    margin: auto;
+    text-align: center;
+     padding: 10px;
+}
+.row {
+    border: none;
+}
+.col {
+    border-width: 1px;
+    border-color: DarkGray;
+    border-style: solid;
+    text-align: center;
+}
+.mcol {
+/*
+    border-width: 1px;
+    border-color: DarkGray;
+    border-style: solid;
+*/
+    padding: 5px;
+    text-align: center;
+}
+.mcol:hover {
+    background-color: #EE96AA;
+}
+.game {
+    width: 440px;
+    margin: auto;
+}
+.info {
+    width: 500px;
+    margin: auto;
+}
+.sub {
+    border-style: none;
+}
+h1 {
+    text-align: center;
+}
+h2 {
+     text-align: left;
+ }
+h3 {
+
+}
+.explic {
+    text-align: left;
+    font-size: 0.7em;
+}
