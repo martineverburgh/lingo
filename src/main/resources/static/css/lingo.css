@@ -1,3 +1,7 @@
+body{
+    background: url(../images/AchtergrondLingo.png) center top no-repeat;
+    background-size: 100%;
+}
 div {
     margin: auto;
     text-align: center;
