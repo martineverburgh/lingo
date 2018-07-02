@@ -4,13 +4,27 @@
     <meta charset="UTF-8">
     <title>LINGO</title>
     <link rel="stylesheet" type="text/css" href="/css/lingo.css">
+    <link rel="stylesheet" type="text/css" href="../css/opmaak.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="/js/lingo.js"></script>
 </head>
+<header>
+    <div ALIGN="right">
+        <div class="box">
+            <div class="ubox" id="username">User</div>
+            <div class="ubox" id="userscore">Hiscore</div>
+        </div>
+    </div>
+</header>
 <body>
-<div ALIGN="right">
-    <div class="ubox" id="username">User</div>
-    <div class="ubox" id="userscore">Highschore</div>
+<div>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a class="active" href="lingo.html">Lingo</a></li>
+        <li><a href="memory.html">Memory</a></li>
+        <li><a href="info.html">Over ons</a></li>
+        <li><a href="edituser.html">Wijzig gegevens</a></li>
+    </ul>
 </div>
 <div><img src="/images/lingo.jpg" alt="lingo"/></div>
 
@@ -54,7 +68,3 @@
 <button onclick="newGame()">Speel opnieuw!</button>
 </body>
 </html>
-
-<script>
-
-</script>
