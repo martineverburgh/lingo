@@ -1,8 +1,8 @@
 body {
     //height: 960px;
     //background-color: #EFE6FA;
-    background: linear-gradient(to right, #9F96AA, #EFE6FA);
-    //background: url(../images/spelletjes2.png) center top no-repeat;
+    //background: linear-gradient(to right, #9F96AA, #EFE6FA);
+    background: url(../images/Achtergrond.png) center top no-repeat;
     background-size: 100%;
 
 }
@@ -12,7 +12,7 @@ ul {
     list-style-type: none;
     margin: 0;
     overflow: hidden;
-    background-color: Blue;
+    background-color: CornflowerBlue;
     position: sticky;
     top: 0;
 }
@@ -23,7 +23,8 @@ li a:hover:not(.active) {
     background-color: LightGrey;
 }
 .active {
-    background-color: Green;
+    background-color: Aquamarine;
+    color: Grey;
 }
 li a {
 
