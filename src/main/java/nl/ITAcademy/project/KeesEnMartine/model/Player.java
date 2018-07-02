@@ -1,4 +1,4 @@
-package nl.ITAcademy.project.LINGO.model;
+package nl.ITAcademy.project.KeesEnMartine.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.springframework.data.annotation.CreatedDate;

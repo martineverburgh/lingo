@@ -1,4 +1,4 @@
-package nl.ITAcademy.project.LINGO;
+package nl.ITAcademy.project.KeesEnMartine;
 
 import org.springframework.stereotype.Component;
 

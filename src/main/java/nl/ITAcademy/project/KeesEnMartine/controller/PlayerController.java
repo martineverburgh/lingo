@@ -1,10 +1,9 @@
-package nl.ITAcademy.project.LINGO.controller;
+package nl.ITAcademy.project.KeesEnMartine.controller;
 
-import nl.ITAcademy.project.LINGO.model.Player;
-import nl.ITAcademy.project.LINGO.repository.PlayerRepository;
+import nl.ITAcademy.project.KeesEnMartine.model.Player;
+import nl.ITAcademy.project.KeesEnMartine.repository.PlayerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;

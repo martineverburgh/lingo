@@ -1,8 +1,6 @@
-package nl.ITAcademy.project.LINGO.controller;
+package nl.ITAcademy.project.KeesEnMartine.controller;
 
-import nl.ITAcademy.project.LINGO.LINGO;
-import nl.ITAcademy.project.LINGO.WoordenChecker;
-import nl.ITAcademy.project.LINGO.model.Player;
+import nl.ITAcademy.project.KeesEnMartine.WoordenChecker;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
