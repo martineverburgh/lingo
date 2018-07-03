@@ -51,17 +51,12 @@ header {
     margin: auto;
     float: left;
     border-width: 2px;
-    border-color: DarkGray;
-    border-style: solid;
     text-align: center;
 }
 
 .box {
     width: 10em;
     height: 2em;
-    border-width: 2px;
-    border-color: DarkGray;
-    border-style: solid;
     text-align: center;
 }
 
