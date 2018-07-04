@@ -31,4 +31,16 @@ $(function(){
         var playerscore = document.getElementById('userscore');
         playerscore.innerText = '0 0';
         sessionStorage.setItem("username", usernm);
+
+        var $lingohighscores = $('#lingoHighScores');
+
+        $.ajax({
+                type: 'GET',
+                url: '/players/lingohighscores',
+                success: function(data){
+                    $.each(data, function(i, item){
+                        $lingohighscores.append('<li>' + item.playerName + ': ' + item.lingoScore + '</li>');
+                    });
+                }
+        });
 });

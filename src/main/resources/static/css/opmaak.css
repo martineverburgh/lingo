@@ -123,3 +123,6 @@ h3 {
 .inspringen {
     margin-left: 40px;
 }
+ul.lingoHighScores > li {
+    float: none;
+}

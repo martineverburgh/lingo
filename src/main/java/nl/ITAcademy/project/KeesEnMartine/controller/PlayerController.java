@@ -52,4 +52,9 @@ public class PlayerController {
 
         return ResponseEntity.ok().build();
     }
+
+    @GetMapping("/lingohighscores")
+    public List<Player> getLingoHighScores(){
+        return playerRepository.findTop3ByOrderByLingoScoreDesc();
+    }
 }
