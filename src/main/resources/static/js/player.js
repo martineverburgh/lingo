@@ -1,6 +1,12 @@
  $( document ).ready(function() {
 
- 	var $playerName = $('#playerName');
+    var player = document.getElementById('username');
+    var usernm = sessionStorage.getItem("username");
+    player.innerText = usernm+':';
+    var currentUsername = document.getElementById('user');
+    currentUsername.append(usernm);
+
+    var $playerName = $('#playerName');
 
  	$.ajax({
  		type: 'GET',

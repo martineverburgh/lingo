@@ -1,13 +1,7 @@
 $(function(){
 
-     var playerbox = document.getElementById('username');
-     var usernm = sessionStorage.getItem("username");
-     if (usernm !== "null"){
-     playerbox.innerText = usernm+':';}
-     else {playerbox.innerText = "User";}
-
     $('.button').on('click',function(){
-        usernm = document.getElementById('inputfield').value;
+        var usernm = document.getElementById('inputfield').value;
         var player = {
         playerName: usernm,
         lingoScore: 0,
@@ -20,17 +14,24 @@ $(function(){
         contentType:"application/json",
         dataType:"json",
         data: JSON.stringify(player),
-        success: function(newPlayer){
-            console.log('success', newPlayer);
-            var play = document.getElementById('username');
-            play.innerText = usernm+':';
-            sessionStorage.setItem("username", usernm);
+        success: function(){
+            var username = document.getElementById('username');
+            var lingoScore = document.getElementById('lingoscore');
+            var memoryScore = document.getElementById('memoryscore');
+//            sessionStorage.setItem("username", usernm);
+            sessionStorage.setItem("currentPlayer", player);
+            username.innerText = player.playerName+':';
+            lingoScore.innerText = player.lingoScore;
+            memoryScore.innerText = player.memoryScore;
             },
         });
-    });
-        var playerscore = document.getElementById('userscore');
-        playerscore.innerText = '0 0';
-        sessionStorage.setItem("username", usernm);
+
+         var playerbox = document.getElementById('username');
+         var currentPlayer = sessionStorage.getItem("currentPlayer");
+         if (usernm !== "null"){
+         playerbox.innerText = usernm+':';}
+         else {playerbox.innerText = "User";}
+
 
         var $lingohighscores = $('#lingoHighScores');
 
@@ -39,8 +40,9 @@ $(function(){
                 url: '/players/lingohighscores',
                 success: function(data){
                     $.each(data, function(i, item){
-                        $lingohighscores.append('<li>' + item.playerName + ': ' + item.lingoScore + '</li>');
+                        $lingohighscores.append('<li class="highScores">' + item.playerName + ': ' + item.lingoScore + '</li>');
                     });
                 }
         });
+    });
 });

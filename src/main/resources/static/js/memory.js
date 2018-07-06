@@ -6,25 +6,38 @@ var tcont = '';
 var nwimg = '';
 var openpict = 0;
 var attempts = 0;
-var imageArr = ['../images/stonehenge.png',
+var allImages = ['../images/appel.png',
+                '../images/aristoteles.png',
                 '../images/einstein.png',
+                '../images/newton.png',
                 '../images/opera_house.png',
-                '../images/aristoteles.png',
-
-                '../images/stonehenge.png',
+                '../images/peer.png',
                 '../images/pyramid.png',
-                '../images/newton.png',
-                '../images/einstein.png',
+                '../images/sinaasappel.png',
+                '../images/stonehenge.png'
+                ];
 
-                '../images/aristoteles.png',
-                '../images/newton.png',
-                '../images/pyramid.png',
-                '../images/opera_house.png'
+var imageArr = ['',
+                '',
+                '',
+                '',
+
+                '',
+                '',
+                '',
+                '',
+
+                '',
+                '',
+                '',
+                ''
                 ];
 var thisAttempt = ['',''];
 var items = [];
 var orgPict = '../images/vraagteken.png';
 var timeout;
+
+fillSquares();
 
     $('.mcol').on('click', function(){
         ids = this.id;
@@ -52,7 +65,7 @@ var timeout;
                         $(items[1]).children('img').attr('src', orgPict);
                         items.pop();
                         items.pop();
-                        }, 2000);
+                        }, 1000);
                 }
                 else {
                      items.pop();
@@ -93,24 +106,44 @@ var timeout;
        return retval;
     }
 
-function sleep(milliseconds) {
-  var start = new Date().getTime();
-  for (var i = 0; i < 1e7; i++) {
-    if ((new Date().getTime() - start) > milliseconds){
-      break;
+    function sleep(milliseconds) {
+      var start = new Date().getTime();
+      for (var i = 0; i < 1e7; i++) {
+        if ((new Date().getTime() - start) > milliseconds){
+          break;
+        }
+      }
     }
-  }
+
+    function fillSquares(){
+        var randIdx;
+        var unusedImages;
+
+        unusedImages = allImages;
+        for (var i = 1; i <= 6; i++){
+            randIdx = Math.floor(Math.random() * unusedImages.length);
+            var j = 0;
+            var k = 0;
+            var currImage ;
+            while (j <= randIdx){
+                k++;
+                if (k >= unusedImages.length){k = 0;}
+                if (unusedImages[k] != '') {j++;}
+            }
+            currImage = unusedImages[k];
+            unusedImages[k] = '';
+            for (var n = 1; n <= 2; n++) {
+                randIdx = Math.floor(Math.random() * imageArr.length);
+                j = 0;
+                k = 0;
+                while (j <= randIdx) {
+                    k++;
+                    if (k >= imageArr.length){k = 0;}
+                    if (imageArr[k] == '') {j++;}
+                }
+                imageArr[k] = currImage;
+            }
+        }
 }
 
 })
-
-function getData(){
-    var query = window.location.search;
-    if (query.substr(0,1)=='?') {
-        var data = query.split(',');
-        var player = document.getElementById('username');
-        player.innerText = data[0];
-        var playerscore = document.getElementById('userscore');
-        playerscore.innerText = data[1];
-    }
-}
