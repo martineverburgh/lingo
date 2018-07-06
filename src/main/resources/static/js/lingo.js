@@ -21,15 +21,20 @@ $( document ).ready(function() {
 var score = 0;
 
 function checkForWin(result, currentRowNumber){
+    var lingoScore = document.getElementById('lingoscore');
     var rightAnswer = new Array("right", "right", "right", "right", "right");
     if(JSON.stringify(result) === JSON.stringify(rightAnswer)){
         score += 10;
         alert("Hoera, je hebt het goed geraden! \r\n+10 punten!");
+        sessionStorage.setItem("lscore", score);
+        lingoScore.innerText = "Lingo: "+sessionStorage.getItem("lscore");
     }
     if((currentRowNumber == 5) && (JSON.stringify(result) !== JSON.stringify(rightAnswer))){
         score += -2;
         $.get( "/lingo/answer", function( answer ) {
         alert("Helaas, je hebt het niet geraden...\r\nHet juiste antwoord was " + answer + "\r\n-2 punten");
+        sessionStorage.setItem("lscore", score);
+        lingoScore.innerText = "Lingo: "+sessionStorage.getItem("lscore");
         });
     }
     var s = document.getElementById("userscore");

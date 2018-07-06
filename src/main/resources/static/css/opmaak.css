@@ -1,7 +1,4 @@
 body {
-    //height: 960px;
-    //background-color: #EFE6FA;
-    //background: linear-gradient(to right, #9F96AA, #EFE6FA);
     background: url(../images/achtergrond.png) center top no-repeat;
     background-size: 100%;
 
@@ -55,7 +52,7 @@ header {
 }
 
 .box {
-    width: 15em;
+    width: 20em;
     height: 2em;
     text-align: center;
 }
@@ -67,11 +64,6 @@ header {
 }
 
 .container {
-    /*
-    border-width: 2px;
-    border-color: DarkGray;
-    border-style: solid;
-    */
     margin: auto;
     text-align: center;
      padding: 10px;
@@ -85,11 +77,6 @@ header {
     text-align: center;
 }
 .mcol {
-/*
-    border-width: 1px;
-    border-color: DarkGray;
-    border-style: solid;
-*/
     padding: 5px;
     text-align: center;
 }

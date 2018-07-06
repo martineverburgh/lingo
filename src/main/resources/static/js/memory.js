@@ -72,8 +72,9 @@ fillSquares();
                      items.pop();
                    // zijn alle plaatjes omgedraaid?
                     if (hasAll()) {
-                        var s = document.getElementById("userscore");
-                        s.innerText = attempts;
+                        var memoryScore = document.getElementById('memoryscore');
+                        sessionStorage.setItem("mscore", attempts);
+                        memoryScore.innerText = "Memory: "+sessionStorage.getItem("mscore");
                     }
                 }
                 thisAttempt = ['',''];

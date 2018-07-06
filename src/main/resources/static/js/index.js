@@ -1,5 +1,20 @@
 $(function(){
 
+    var username = document.getElementById('username');
+    var lingoScore = document.getElementById('lingoscore');
+    var memoryScore = document.getElementById('memoryscore');
+    var $lingohighscores = $('#lingoHighScores');
+
+    $.ajax({
+            type: 'GET',
+            url: '/players/lingohighscores',
+            success: function(data){
+                $.each(data, function(i, item){
+                    $lingohighscores.append('<li class="highScores">' + item.playerName + ': ' + item.lingoScore + '</li>');
+                });
+            }
+    });
+
     $('.button').on('click',function(){
         var usernm = document.getElementById('inputfield').value;
         var player = {
@@ -15,34 +30,18 @@ $(function(){
         dataType:"json",
         data: JSON.stringify(player),
         success: function(){
-            var username = document.getElementById('username');
-            var lingoScore = document.getElementById('lingoscore');
-            var memoryScore = document.getElementById('memoryscore');
-//            sessionStorage.setItem("username", usernm);
-            sessionStorage.setItem("currentPlayer", player);
-            username.innerText = player.playerName+':';
-            lingoScore.innerText = player.lingoScore;
-            memoryScore.innerText = player.memoryScore;
+            sessionStorage.setItem("playername", player.playerName);
+            sessionStorage.setItem("lscore", player.lingoScore);
+            sessionStorage.setItem("mscore", player.memoryScore);
+            username.innerText = "Welkom " + sessionStorage.getItem("playername") + "!  ";
+            lingoScore.innerText = "Lingo: " + sessionStorage.getItem("lscore");
+            memoryScore.innerText = "Memory: " + sessionStorage.getItem("mscore");
             },
         });
-
-         var playerbox = document.getElementById('username');
-         var currentPlayer = sessionStorage.getItem("currentPlayer");
-         if (usernm !== "null"){
-         playerbox.innerText = usernm+':';}
-         else {playerbox.innerText = "User";}
-
-
-        var $lingohighscores = $('#lingoHighScores');
-
-        $.ajax({
-                type: 'GET',
-                url: '/players/lingohighscores',
-                success: function(data){
-                    $.each(data, function(i, item){
-                        $lingohighscores.append('<li class="highScores">' + item.playerName + ': ' + item.lingoScore + '</li>');
-                    });
-                }
-        });
     });
+    if( sessionStorage.getItem("playername") !== null){
+         username.innerText = "Welkom " + sessionStorage.getItem("playername") + "!  ";
+         lingoScore.innerText = "Lingo: " + sessionStorage.getItem("lscore");
+         memoryScore.innerText = "Memory: " + sessionStorage.getItem("mscore");
+         }
 });

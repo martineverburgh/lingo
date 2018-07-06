@@ -31,16 +31,13 @@ public class PlayerController {
         return playerRepository.findByPlayerName(playerName);
     }
 
-    @PutMapping("/{playerName}")
-    public Player updatePlayer(@PathVariable(value = "playerName") String playerName, @Valid @RequestBody Player playerDetails) {
+    @PutMapping("/players")
+    public Player updatePlayerName(Player currentPlayer, Player playerWithNewUsername) {
 
-        Player player = playerRepository.findByPlayerName(playerName);
+        Player existingPlayer = getPlayerbyPlayerName(currentPlayer.getPlayerName());
+        existingPlayer.setPlayerName(playerWithNewUsername.getPlayerName());
 
-        player.setPlayerName(playerDetails.getPlayerName());
-        player.setLingoScore(playerDetails.getLingoScore());
-        player.setMemoryScore(playerDetails.getMemoryScore());
-
-        Player updatedPlayer = playerRepository.save(player);
+        Player updatedPlayer = playerRepository.save(existingPlayer);
         return updatedPlayer;
     }
 
